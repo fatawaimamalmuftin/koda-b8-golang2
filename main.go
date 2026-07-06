@@ -44,6 +44,12 @@ type My struct {
 	Favourite []Favourite
 }
 
+// -----------------------
+type Number struct {
+	First   []int
+	Secound []int
+}
+
 func main() {
 	We := We{
 		Are: Are{
@@ -91,4 +97,10 @@ func main() {
 		},
 	}
 	fmt.Println("4. my[0].Favourite[3].Fruit.Is : ", my[0].Favourite[3].Fruit.Is)
+	//---------------------------------------------------------------------------
+	num := Number{
+		First:   []int{1, 12},
+		Secound: []int{5, 6, 20},
+	}
+	fmt.Println("5. num.First[1] + num.Secound[2] : ", num.First[1]+num.Secound[2])
 }
