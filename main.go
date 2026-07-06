@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"runtime/trace"
 )
 
 type The struct {
@@ -19,9 +18,20 @@ type We struct {
 type Hello struct {
 	World string
 }
-//-----------------
 
-
+// -----------------
+type Tech struct {
+	Academy string
+}
+type Man struct {
+	Tech Tech
+}
+type Data struct {
+	Man []Man
+}
+type Object struct {
+	Str [][][]Data
+}
 
 func main() {
 	We := We{
@@ -32,9 +42,26 @@ func main() {
 		},
 	}
 	fmt.Println("1. We.Are.The.Best : ", We.Are.The.Best)
-
+	//---------------------------------------------------------
 	hello := Hello{
 		World: "Hello World",
 	}
 	fmt.Println("2. hello.world : ", hello.World)
+	// ---------------------------------------------------------
+	obj := Object{
+		Str: make([][][]Data, 4),
+	}
+	obj.Str[3] = make([][]Data, 2)
+	obj.Str[3][1] = make([]Data, 3)
+
+	obj.Str[3][1][2] = Data{
+		Man: []Man{
+			{
+				Tech: Tech{
+					Academy: "Tech Academy",
+				},
+			},
+		},
+	}
+	fmt.Println("3. obj.str[3][1][2].man[0].tech.academy : ", obj.Str[3][1][2].Man[0].Tech.Academy)
 }
