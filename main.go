@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"runtime/trace"
 )
 
 type The struct {
@@ -18,6 +19,9 @@ type We struct {
 type Hello struct {
 	World string
 }
+//-----------------
+
+
 
 func main() {
 	We := We{
@@ -28,4 +32,9 @@ func main() {
 		},
 	}
 	fmt.Println("1. We.Are.The.Best : ", We.Are.The.Best)
+
+	hello := Hello{
+		World: "Hello World",
+	}
+	fmt.Println("2. hello.world : ", hello.World)
 }
