@@ -33,6 +33,17 @@ type Object struct {
 	Str [][][]Data
 }
 
+// -----------------
+type Fruit struct {
+	Is string
+}
+type Favourite struct {
+	Fruit Fruit
+}
+type My struct {
+	Favourite []Favourite
+}
+
 func main() {
 	We := We{
 		Are: Are{
@@ -64,4 +75,20 @@ func main() {
 		},
 	}
 	fmt.Println("3. obj.str[3][1][2].man[0].tech.academy : ", obj.Str[3][1][2].Man[0].Tech.Academy)
+	//----------------------------------------------------------------------------------------------
+	my := []My{
+		{
+			Favourite: []Favourite{
+				{},
+				{},
+				{},
+				{
+					Fruit: Fruit{
+						Is: "Apple",
+					},
+				},
+			},
+		},
+	}
+	fmt.Println("4. my[0].Favourite[3].Fruit.Is : ", my[0].Favourite[3].Fruit.Is)
 }
